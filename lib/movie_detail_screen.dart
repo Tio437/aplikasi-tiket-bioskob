@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'movie_model.dart';
+import 'seat_selection_screen.dart';
 
 class MovieDetailScreen extends StatelessWidget {
   final Movie movie;
@@ -191,10 +192,10 @@ class MovieDetailScreen extends StatelessWidget {
                     height: 52,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Pembelian tiket untuk ${movie.title} belum tersedia.'),
-                            backgroundColor: themeColor,
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SeatSelectionScreen(movie: movie),
                           ),
                         );
                       },

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'movie_model.dart';
 
 class MovieService {
-  static const String _apiKey = '5d37e556bb5d4dba882e2bb72b746060';
+  static const String _apiKey = '0d4025423f2e5ff6d286d51a55eba27a';
   static const String _baseUrl = 'https://api.themoviedb.org/3';
 
   // Flag to check if we fell back to mock data
