@@ -175,16 +175,31 @@ class MovieDetailScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 12),
-                  Text(
-                    movie.overview,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.black87,
-                      height: 1.6,
-                    ),
-                  ),
-                  const SizedBox(height: 28),
+                   const SizedBox(height: 12),
+                   Container(
+                     padding: const EdgeInsets.all(16),
+                     decoration: BoxDecoration(
+                       color: Colors.white,
+                       borderRadius: BorderRadius.circular(12),
+                       border: Border.all(color: themeColor.withOpacity(0.12), width: 1),
+                       boxShadow: [
+                         BoxShadow(
+                           color: Colors.black.withOpacity(0.03),
+                           blurRadius: 10,
+                           offset: const Offset(0, 4),
+                         ),
+                       ],
+                     ),
+                     child: Text(
+                       movie.overview,
+                       style: TextStyle(
+                         fontSize: 15,
+                         color: Colors.grey[800],
+                         height: 1.6,
+                       ),
+                     ),
+                   ),
+                   const SizedBox(height: 28),
                   
                   // Action buttons styled like Cineplex ticket booking
                   SizedBox(
