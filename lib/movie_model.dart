@@ -18,10 +18,15 @@ class Movie {
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) {
+    String overviewText = json['overview'] ?? '';
+    if (overviewText.trim().isEmpty) {
+      overviewText = 'Sinopsis film "${json['title'] ?? 'ini'}" belum tersedia dalam Bahasa Indonesia. Film populer ini menyajikan jalan cerita yang seru, mendebarkan, dan sangat dinantikan oleh banyak penonton. Saksikan petualangan serunya segera di bioskop kesayangan Anda.';
+    }
+
     return Movie(
       id: json['id'] ?? 0,
       title: json['title'] ?? json['name'] ?? 'Untitled',
-      overview: json['overview'] ?? 'No description available.',
+      overview: overviewText,
       posterPath: json['poster_path'] ?? '',
       backdropPath: json['backdrop_path'] ?? '',
       releaseDate: json['release_date'] ?? json['first_air_date'] ?? '',
